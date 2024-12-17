@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 2), () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>const OnboardingScreen(),
+            ),
+          );
         }
     );
   }

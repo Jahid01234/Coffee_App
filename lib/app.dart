@@ -1,4 +1,6 @@
 import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/onboarding_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           scaffoldBackgroundColor: const Color(0xff000503),
       ),
-      home: const MainBottomNavScreen() ,
+      home: const SplashScreen() ,
     );
   }
 }

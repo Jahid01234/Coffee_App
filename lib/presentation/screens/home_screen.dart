@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 30),
 
             // 4th:- Coffee category types............
-            CoffeeCategoryTypes()
+            const CoffeeCategoryTypes()
           ],
         ),
       ),

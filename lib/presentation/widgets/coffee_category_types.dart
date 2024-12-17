@@ -13,7 +13,7 @@ class _CoffeeCategoryTypesState extends State<CoffeeCategoryTypes> {
   final List<String> _coffeeTypes = [
     "Cappuccino",
     "Cafe Latte",
-    "Cafe Macchiato",
+    "Cafe Machination",
     "Espresso",
     "Flat White",
     "Latte",
@@ -27,7 +27,7 @@ class _CoffeeCategoryTypesState extends State<CoffeeCategoryTypes> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 25,
+      height: 20,
       child: ListView.separated(
           shrinkWrap: true,
           primary: false,
@@ -50,8 +50,8 @@ class _CoffeeCategoryTypesState extends State<CoffeeCategoryTypes> {
                               ? Colors.orange
                               : Colors.white,
                     fontWeight: _selectedCoffeeIndex == index
-                                 ? FontWeight.bold
-                                 : FontWeight.w500,
+                                  ? FontWeight.bold
+                                  : FontWeight.w500,
                 ),
               ),
             );
