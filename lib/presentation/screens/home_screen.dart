@@ -1,6 +1,10 @@
+import 'package:coffee_app_ui/data/model/coffee_model.dart';
+import 'package:coffee_app_ui/presentation/screens/product_details_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/coffee_category_types.dart';
+import 'package:coffee_app_ui/presentation/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<CoffeeModel> _coffeeItem = CoffeeModel.coffeeItem;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppBarContainer(
-                    child: Icon(
-                      Icons.apps_rounded,
-                      color: Colors.white.withOpacity(0.2),
-                    ),
+                  child: Icon(
+                    Icons.apps_rounded,
+                    color: Colors.white.withOpacity(0.2),
+                  ),
                 ),
                 AppBarContainer(
                   child: ClipOval(
@@ -39,12 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // 2nd:- Find the best coffee for you Text part...........
             const Text(
-                "Find the best\ncoffee for you",
+              "Find the best\ncoffee for you",
               style: TextStyle(
-                fontSize: 28,
-                color: Colors.white,
-                fontWeight: FontWeight.w700
-              ),
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 30),
 
@@ -53,7 +58,35 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 30),
 
             // 4th:- Coffee category types............
-            const CoffeeCategoryTypes()
+            const CoffeeCategoryTypes(),
+            const SizedBox(height: 30),
+
+            // 5th:- Coffee Tile............
+            SizedBox(
+              height: 280,
+              child: ListView.separated(
+                shrinkWrap: true,
+                primary: false,
+                scrollDirection: Axis.horizontal,
+                itemCount: _coffeeItem.length,
+                separatorBuilder: (_, __) {
+                  return const SizedBox(width: 7);
+                },
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> const ProductDetailsScreen(),
+                       ),
+                      );
+                    },
+                    child: ProductCard(
+                      coffeeModel: _coffeeItem[index],
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -63,28 +96,26 @@ class _HomeScreenState extends State<HomeScreen> {
   // Text field widget......
   Widget buildTextField() {
     return TextField(
-            style: const TextStyle(color: Colors.white),
-            readOnly: true,
-            decoration: InputDecoration(
-              hintText: "Find your coffee ...",
-              hintStyle: TextStyle(
-                  color: Colors.grey.withOpacity(0.3),
-              ),
-              prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(17),
-                borderSide: BorderSide.none
-              ),
-              filled: true,
-              fillColor: const Color(0xff0a0c0c),
-              //fillColor: const Color(0xFF141921),
-
-              contentPadding: const EdgeInsets.all(14),
-            ),
-            cursorColor: Colors.grey,
-          );
+      style: const TextStyle(color: Colors.white),
+      readOnly: true,
+      decoration: InputDecoration(
+        hintText: "Find your coffee ...",
+        hintStyle: TextStyle(
+          color: Colors.grey.withOpacity(0.3),
+        ),
+        prefixIcon: const Icon(Icons.search),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(17),
+        ),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(17),
+            borderSide: BorderSide.none),
+        filled: true,
+        fillColor: const Color(0xff0a0c0c),
+        //fillColor: const Color(0xFF141921),
+        contentPadding: const EdgeInsets.all(14),
+      ),
+      cursorColor: Colors.grey,
+    );
   }
 }

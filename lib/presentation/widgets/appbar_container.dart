@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppBarContainer extends StatelessWidget {
   final Widget child;
+  final Color? bgColor;
 
   const AppBarContainer({
     super.key,
     required this.child,
+    this.bgColor,
   });
 
   @override
@@ -14,7 +16,7 @@ class AppBarContainer extends StatelessWidget {
       height: 45,
       width: 45,
       decoration: BoxDecoration(
-        color: const Color(0xff0a0c0c),
+        color: bgColor ?? const Color(0xff0a0c0c),
         //color: const Color(0xFF141921),
         borderRadius: BorderRadius.circular(17),
         border: Border.all(
