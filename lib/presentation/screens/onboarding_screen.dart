@@ -8,7 +8,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-       // clipBehavior: Clip.none,
+        // clipBehavior: Clip.none,
         fit: StackFit.expand,
         children: [
           Align(
@@ -64,13 +64,13 @@ class OnboardingScreen extends StatelessWidget {
                     const SizedBox(height: 30),
                     // Get Started Button...........
                     CustomElevatedButton(
+                        title: "Get Started",
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(
                               builder:(context)=> const MainBottomNavScreen(),
                             ),
                           );
                         },
-                        title: "Get Started",
                     ),
                   ],
                 ),

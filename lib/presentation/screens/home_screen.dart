@@ -6,7 +6,6 @@ import 'package:coffee_app_ui/presentation/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -82,8 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           return GestureDetector(
                             onTap: (){
                               Navigator.push(context, MaterialPageRoute(
-                                builder: (context)=> const ProductDetailsScreen(),
-                              ),
+                                builder: (context)=> ProductDetailsScreen(
+                                  coffeeModel: _coffeeItem[index],
+                                  ),
+                                ),
                               );
                             },
                             child: ProductCard(
@@ -121,8 +122,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             return GestureDetector(
                               onTap: (){
                                 Navigator.push(context, MaterialPageRoute(
-                                  builder: (context)=> const ProductDetailsScreen(),
-                                ),
+                                  builder: (context)=>  ProductDetailsScreen(
+                                      coffeeModel: _coffeeItem[index],
+                                    ),
+                                  ),
                                 );
                               },
                               child: ProductCard(
@@ -146,8 +149,11 @@ class _HomeScreenState extends State<HomeScreen> {
   // Text field widget......
   Widget buildTextField() {
     return TextField(
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(
+          color: Colors.white,
+      ),
       readOnly: true,
+      cursorColor: Colors.grey,
       decoration: InputDecoration(
         hintText: "Find your coffee ...",
         hintStyle: TextStyle(
@@ -159,13 +165,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(17),
-            borderSide: BorderSide.none),
+            borderSide: BorderSide.none,
+        ),
         filled: true,
         fillColor: const Color(0xff0a0c0c),
         //fillColor: const Color(0xFF141921),
         contentPadding: const EdgeInsets.all(14),
       ),
-      cursorColor: Colors.grey,
     );
   }
 }
