@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 1st:- Image art...
+            // 1st:- Image part...
             Stack(
               children: [
                 Container(
@@ -54,7 +54,8 @@ class ProductCard extends StatelessWidget {
                       color: const Color(0xFF342520).withOpacity(0.7),
                       borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(20),
-                          bottomLeft: Radius.circular(22)),
+                          bottomLeft: Radius.circular(22),
+                      ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -78,13 +79,14 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
+
             // 2nd:- Title and Subtitle part...
             const SizedBox(height: 10),
             FittedBox(
               child: Text(
                 coffeeModel.title,
                 style: const TextStyle(
-                  fontSize: 21,
+                  fontSize: 19,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -97,6 +99,7 @@ class ProductCard extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+
             // 3rd:- Price and add button part...
             const SizedBox(height: 10),
             Row(

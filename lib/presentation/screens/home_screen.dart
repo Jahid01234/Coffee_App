@@ -6,6 +6,7 @@ import 'package:coffee_app_ui/presentation/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -59,32 +60,81 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // 4th:- Coffee category types............
             const CoffeeCategoryTypes(),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
 
-            // 5th:- Coffee Tile............
-            SizedBox(
-              height: 280,
-              child: ListView.separated(
-                shrinkWrap: true,
-                primary: false,
-                scrollDirection: Axis.horizontal,
-                itemCount: _coffeeItem.length,
-                separatorBuilder: (_, __) {
-                  return const SizedBox(width: 7);
-                },
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(
-                          builder: (context)=> const ProductDetailsScreen(),
-                       ),
-                      );
-                    },
-                    child: ProductCard(
-                      coffeeModel: _coffeeItem[index],
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 5th:- Coffee Tile............
+                    SizedBox(
+                      height: 280,
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        primary: false,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _coffeeItem.length,
+                        separatorBuilder: (_, __) {
+                          return const SizedBox(width: 7);
+                        },
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> const ProductDetailsScreen(),
+                              ),
+                              );
+                            },
+                            child: ProductCard(
+                              coffeeModel: _coffeeItem[index],
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                  );
-                },
+                    const SizedBox(height: 10),
+              
+                    // 6th:- Special coffee Text part............
+                    const Text(
+                      "Special for you",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    //const SizedBox(height: 15),
+              
+                    // 7th:- Horizontal product card part............
+                    SizedBox(
+                      height: 280,
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        primary: false,
+                        scrollDirection: Axis.vertical,
+                          itemCount: _coffeeItem.length,
+                          separatorBuilder: (_,__){
+                            return const SizedBox(height: 15);
+                          },
+                          itemBuilder: (context,index){
+                            return GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=> const ProductDetailsScreen(),
+                                ),
+                                );
+                              },
+                              child: ProductCard(
+                                  coffeeModel:_coffeeItem[index],
+                              ),
+                            );
+                          },
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                  ],
+                ),
               ),
             ),
           ],

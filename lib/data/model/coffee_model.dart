@@ -20,7 +20,7 @@ class CoffeeModel {
         title: "Cappuccino",
         subtitle: "With Oat Milk",
         itemImg: "assets/images/cappuccino.jpeg",
-        price: 4.20,
+        price: 4.28,
         rating: 4.5,
     ),
     CoffeeModel(
@@ -30,21 +30,19 @@ class CoffeeModel {
       price: 3.14,
       rating: 4.2,
     ),
-
     CoffeeModel(
       title: "Cafe Machination",
       subtitle: "With Cream",
       itemImg: "assets/images/caffe_macchiato.jpeg",
       price: 4.14,
-      rating: 4.3,
+      rating: 4.9,
     ),
-
     CoffeeModel(
       title: "Cafe Latte",
       subtitle: "With Chocolate",
       itemImg: "assets/images/cafe_latte.jpeg",
       price: 4.14,
-      rating: 4.3,
+      rating: 4.0,
     ),
 
   ];
