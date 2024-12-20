@@ -10,7 +10,8 @@ class SizePicker extends StatefulWidget {
 
 class _SizePickerState extends State<SizePicker> {
   int _selectedIndex = 0;
-  final List<String>  _sizeItem =[
+  final List<String>  _sizeItem =
+  [
     "S",
     "M",
     "L"
@@ -28,8 +29,7 @@ class _SizePickerState extends State<SizePicker> {
         separatorBuilder: (_,__){
           return const SizedBox(width: 25);
         },
-        itemBuilder: (context, index) {
-          final bool isSelected = _selectedIndex == index;
+        itemBuilder: (context,index) {
           return GestureDetector(
             onTap: (){
               setState(() {
@@ -40,17 +40,17 @@ class _SizePickerState extends State<SizePicker> {
               height: 40,
               width: 90,
               child: AppBarContainer(
-                borderColor: isSelected
+                borderColor: _selectedIndex == index
                                  ? Colors.orange
-                                 : null,
+                                 : Colors.grey.withOpacity(0.4),
                 child: Center(
                   child: Text(
                     _sizeItem[index],
                     style:  TextStyle(
-                        color: isSelected
+                        color: _selectedIndex == index
                                     ? Colors.orange
                                     : Colors.white,
-                        fontWeight: isSelected
+                        fontWeight: _selectedIndex == index
                                         ? FontWeight.bold
                                         : FontWeight.normal,
                     ),
@@ -59,7 +59,7 @@ class _SizePickerState extends State<SizePicker> {
               ),
             ),
           );
-        }
+        },
       ),
     );
   }

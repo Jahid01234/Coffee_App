@@ -1,4 +1,5 @@
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
+import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/profile_component.dart';
 import 'package:flutter/material.dart';
 
@@ -14,24 +15,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+
       body: Padding(
-        padding: const EdgeInsets.only(top: 80,left: 20,right: 20),
+        padding: const EdgeInsets.only(top: 50,left: 20,right: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // profile image
+              Align(
+                alignment: Alignment.topLeft,
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: const AppBarContainer(
+                      child: Icon(
+                        Icons.arrow_back_ios_new_outlined,
+                        color: Colors.grey,
+                        size: 19,
+                      ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              // profile image.....
               Container(
                 height: 100,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: const Color(0xff296e48).withOpacity(0.5),
+                    color: Colors.white70,
                     width: 2.0,
                   ),
                   image: const DecorationImage(
                     image: AssetImage("assets/images/jahid.jpg"),
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
@@ -44,15 +63,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Md. Jahid Hasan",
                         style: TextStyle(
-                            color: const Color(0xff296e48).withOpacity(0.8),
+                            color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         ),
                       ),
-                      Image.asset("assets/images/verified.png",height: 20,),
+                      Image.asset(
+                          "assets/images/verified.png",
+                          height: 18,
+                      ),
                     ],
                   ),
                   const Text(
@@ -72,6 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: 'My Profile',
                     icon: Icons.person,
                   ),
+
                   ProfileComponent(
                     title: 'Home',
                     icon: Icons.home,
@@ -82,26 +105,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       );
                     },
                   ),
+
                   const ProfileComponent(
                     title: 'Setting',
                     icon: Icons.settings,
                   ),
+
                   const ProfileComponent(
                     title: 'Notifications',
                     icon: Icons.notifications,
                   ),
+
                   const ProfileComponent(
                     title: 'Chat',
                     icon: Icons.chat,
                   ),
+
                   const ProfileComponent(
                     title: 'Share',
                     icon: Icons.share,
                   ),
+
                   const ProfileComponent(
                     title: 'Log Out',
                     icon: Icons.logout,
                   ),
+
                 ],
               ),
             ],

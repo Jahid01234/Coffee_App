@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ProfileComponent extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -45,7 +44,7 @@ class ProfileComponent extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 title,style: const TextStyle(
-                color: Color(0xff296e48),
+                color: Colors.white,
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
                ),
@@ -57,10 +56,10 @@ class ProfileComponent extends StatelessWidget {
             onPressed: onPressed,
             icon: Icon(
               Icons.arrow_forward_ios,
-              color: const Color(0xff296e48).withOpacity(.4),
+              color: Colors.grey.shade600,
               size: 20,
             ),
-          )
+          ),
         ],
       ),
     );

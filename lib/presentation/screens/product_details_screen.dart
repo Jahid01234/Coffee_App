@@ -1,8 +1,8 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
+import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
-
 
 class ProductDetailsScreen extends StatefulWidget {
   final CoffeeModel coffeeModel;
@@ -35,14 +35,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 fit: BoxFit.cover,
               ),
             ),
-            child:  Padding(
+            child: Padding(
               padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: const AppBarContainer(
@@ -164,16 +164,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               text: TextSpan(
                                 text: widget.coffeeModel.rating.toString(),
                                 style: const TextStyle(
-                                    fontSize: 18,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
                                 ),
                                 children: const [
                                   TextSpan(
                                     text: " (5,789)",
                                     style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ],
@@ -194,62 +194,108 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
           ),
           // 3rd stack:- Description/size/price/button part..........
-          const Positioned(
+          Positioned(
             top: 520,
             left: 0,
             right: 0,
             child: SizedBox(
               height: 295,
               child: Padding(
-                padding: EdgeInsets.only(left: 23,right: 23),
+                padding: const EdgeInsets.only(left: 23, right: 23),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // 1st: Description part.... 
-                    Text(
+                    // 1st: Description part....
+                    const Text(
                       "Description",
                       style: TextStyle(
-                          fontSize:18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       "A cappuccino is a coffee-based drink made primarily from espresso and milk. It is the best coffee. ",
                       maxLines: 2,
                       style: TextStyle(
-                        fontSize:16,
+                        fontSize: 16,
                         color: Colors.white70,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
 
                     // 2nd: Size picker part....
-                    SizedBox(height: 15),
-                    Text(
+                    const SizedBox(height: 15),
+                    const Text(
                       "Size",
                       style: TextStyle(
-                        fontSize:18,
+                        fontSize: 18,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Row(
+                    const SizedBox(height: 8),
+                    // Size picker...
+                    const Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizePicker(),
                       ],
                     ),
-
-
+                    const SizedBox(height: 30),
+                    // price and Button section..
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            const Text(
+                              "Price",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                text:"\$ ",
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                children:  [
+                                  TextSpan(
+                                    text: widget.coffeeModel.price.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 200,
+                          child: CustomElevatedButton(
+                            onTap: () {},
+                            title: "Buy Now",
+                            bgColor: Colors.orange.shade700,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 2), () {
+        const Duration(seconds: 3), () {
           Navigator.push(context, MaterialPageRoute(
               builder: (context)=>const OnboardingScreen(),
             ),
@@ -30,11 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
          decoration: const BoxDecoration(
-           image: DecorationImage(
-               image: AssetImage("assets/images/espresso.jpeg"),
-               fit: BoxFit.cover,
-           ),
+           color: Colors.white70,
          ),
+        child: Center(
+            child: Lottie.asset("assets/animations/coffee_animation.json"),
+        ),
       ),
     );
   }
