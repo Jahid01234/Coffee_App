@@ -1,6 +1,8 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
+import 'package:coffee_app_ui/presentation/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
+
 
 class ProductDetailsScreen extends StatefulWidget {
   final CoffeeModel coffeeModel;
@@ -33,20 +35,25 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 fit: BoxFit.cover,
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+            child:  Padding(
+              padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppBarContainer(
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.grey,
-                      size: 20,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: const AppBarContainer(
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Colors.grey,
+                        size: 20,
+                      ),
                     ),
                   ),
-                  AppBarContainer(
+                  const AppBarContainer(
                     child: Icon(
                       Icons.favorite,
                       color: Colors.grey,
@@ -57,7 +64,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ),
           ),
-          // 2nd stack:- U..........
+          // 2nd stack:- title/subtitle/rating part..........
           Positioned(
             top: 350,
             left: 0,
@@ -188,6 +195,61 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ],
                     )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // 3rd stack:- Description/size/price/button part..........
+          const Positioned(
+            top: 520,
+            left: 0,
+            right: 0,
+            child: SizedBox(
+              height: 295,
+              child: Padding(
+                padding: EdgeInsets.only(left: 23,right: 23),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 1st: Description part.... 
+                    Text(
+                      "Description",
+                      style: TextStyle(
+                          fontSize:18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                    ),
+                    Text(
+                      "A cappuccino is a coffee-based drink made primarily from espresso and milk. It is the best coffee. ",
+                      maxLines: 2,
+                      style: TextStyle(
+                        fontSize:16,
+                        color: Colors.white70,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+
+                    // 2nd: Size picker part....
+                    SizedBox(height: 15),
+                    Text(
+                      "Size",
+                      style: TextStyle(
+                        fontSize:18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizePicker(),
+                      ],
+                    ),
+
+
                   ],
                 ),
               ),

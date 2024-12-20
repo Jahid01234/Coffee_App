@@ -1,8 +1,10 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/screens/product_details_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/profile_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/coffee_category_types.dart';
 import 'package:coffee_app_ui/presentation/widgets/product_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -34,9 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.white.withOpacity(0.2),
                   ),
                 ),
-                AppBarContainer(
-                  child: ClipOval(
-                    child: Image.asset("assets/images/jahid.jpg"),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> const ProfileScreen(),
+                      ),
+                    );
+                  },
+                  child: AppBarContainer(
+                    child: ClipOval(
+                      child: Image.asset("assets/images/jahid.jpg"),
+                    ),
                   ),
                 ),
               ],
