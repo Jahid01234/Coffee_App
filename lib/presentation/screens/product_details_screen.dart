@@ -221,10 +221,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const Text(
-                      "A cappuccino is a coffee-based drink made primarily from espresso and milk. It is the best coffee. ",
+                    Text(
+                     widget.coffeeModel.description,
                       maxLines: 2,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.white70,
                         overflow: TextOverflow.ellipsis,
