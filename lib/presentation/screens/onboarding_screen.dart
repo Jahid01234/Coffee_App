@@ -1,4 +1,4 @@
-import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/auth_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +67,7 @@ class OnboardingScreen extends StatelessWidget {
                         title: "Get Started",
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(
-                              builder:(context)=> const MainBottomNavScreen(),
+                              builder:(context)=> const AuthScreen(),
                             ),
                           );
                         },
