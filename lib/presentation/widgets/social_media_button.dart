@@ -6,6 +6,7 @@ class SocialMediaButton extends StatelessWidget {
   final Color color;
   final Color? iconColor;
   final Color? textColor;
+  final double? iconSize;
 
   const SocialMediaButton({
     super.key,
@@ -14,6 +15,7 @@ class SocialMediaButton extends StatelessWidget {
     required this.color,
     this.iconColor,
     this.textColor,
+    this.iconSize,
   });
 
   @override
@@ -32,6 +34,7 @@ class SocialMediaButton extends StatelessWidget {
           Icon(
             icon,
             color: iconColor,
+            size: iconSize,
           ),
           const SizedBox(width: 5),
           Text(

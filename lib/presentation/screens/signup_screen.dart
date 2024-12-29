@@ -194,15 +194,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       SocialMediaButton(
                         label: "Google",
                         icon: Icons.g_mobiledata_outlined,
-                        color: Colors.cyan.withOpacity(0.1),
+                        color: Colors.lightBlue.withOpacity(0.1),
                         iconColor: Colors.grey,
+                        iconSize: 31,
                         textColor: Colors.grey,
                       ),
 
                       SocialMediaButton(
                         label: "Apple",
                         icon: Icons.apple_outlined,
-                        color: Colors.orange.withOpacity(0.1),
+                        color: Colors.green.withOpacity(0.1),
                         iconColor: Colors.grey,
                         textColor: Colors.grey,
                       ),

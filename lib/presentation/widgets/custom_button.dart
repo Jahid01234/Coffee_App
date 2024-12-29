@@ -15,19 +15,20 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        //splashFactory: NoSplash.splashFactory,// remove the splash color
         padding: const EdgeInsets.all(8),
         fixedSize: const Size.fromWidth(double.maxFinite),
-        backgroundColor: Colors.orange.shade600,
+        backgroundColor: Colors.white10.withOpacity(0.1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
       ),
       child: Text(
         title,
-        style: const TextStyle(
-          fontSize: 18,
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.white.withOpacity(0.8),
+          fontWeight: FontWeight.w700,
         ),
       ),
     );

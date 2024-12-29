@@ -24,16 +24,8 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.white10.withOpacity(0.1),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            blurRadius: 10,
-            spreadRadius: 1,
-            offset: const Offset(0,2),
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(2.0),
@@ -44,8 +36,10 @@ class CustomTextFormField extends StatelessWidget {
           autovalidateMode: AutovalidateMode.onUserInteraction,
           cursorColor: Colors.grey,
           textAlign: TextAlign.start,
+          style: const TextStyle(color: Colors.white),
           decoration:  InputDecoration(
               hintText: hintText,
+              hintStyle: const TextStyle(color: Colors.grey),
               border:InputBorder.none,
               prefixIcon: Icon(
                 icon,

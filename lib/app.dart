@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'Coffee App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          splashFactory: NoSplash.splashFactory, // remove the all splash color from the ui
           scaffoldBackgroundColor: const Color(0xff000503),
       ),
       home: const SplashScreen(),
