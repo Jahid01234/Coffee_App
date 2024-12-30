@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:coffee_app_ui/presentation/screens/login_screen.dart';
-import 'package:coffee_app_ui/presentation/widgets/custom_button.dart';
+import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_text_form_field.dart';
 import 'package:coffee_app_ui/presentation/widgets/social_media_button.dart';
 import 'package:flutter/gestures.dart';
@@ -133,13 +133,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 30),
 
                   // 4th:- Button.........
-                  CustomButton(
-                    onPressed:(){
+                  CustomElevatedButton(
+                    onTap:(){
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context)=> const LogInScreen(),
                       ),
                       );
                     },
+                    bgColor: Colors.white10.withOpacity(0.1),
                     title: "Sign Up",
                   ),
                   const SizedBox(height: 10),

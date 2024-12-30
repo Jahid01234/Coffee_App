@@ -1,4 +1,5 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
+import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/size_picker.dart';
@@ -289,9 +290,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         SizedBox(
                           width: 200,
                           child: CustomElevatedButton(
-                            onTap: () {},
-                            title: "Buy Now",
-                            bgColor: Colors.orange.shade700,
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> const CartScreen(),
+                               ),
+                              );
+                            },
+                            title: "Add to Cart",
+                            bgColor: Colors.orange.shade600,
                           ),
                         ),
                       ],

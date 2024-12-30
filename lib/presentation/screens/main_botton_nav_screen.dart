@@ -1,3 +1,4 @@
+import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = const [
     HomeScreen(),
-    Center(child: Text("Shop screen")),
-    Center(child: Text("Favourite screen")),
-    Center(child: Text("Notification screen")),
+    CartScreen(),
+    Center(child: Text("Favourite screen",style: TextStyle(color: Colors.grey))),
+    Center(child: Text("Notification screen",style: TextStyle(color: Colors.grey))),
   ];
 
 

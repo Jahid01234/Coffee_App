@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
-import 'package:coffee_app_ui/presentation/widgets/custom_button.dart';
+import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_text_form_field.dart';
 import 'package:coffee_app_ui/presentation/widgets/social_media_button.dart';
 import 'package:flutter/gestures.dart';
@@ -111,13 +111,14 @@ class _LogInScreenState extends State<LogInScreen> {
                 // 4th:- Button.........
                 FadeInUp(
                   duration: const Duration(milliseconds: 500),
-                  child: CustomButton(
-                    onPressed: (){
+                  child: CustomElevatedButton(
+                    onTap: (){
                       Navigator.push(context, MaterialPageRoute(
                           builder: (context)=> const MainBottomNavScreen(),
                        ),
                       );
                     },
+                    bgColor: Colors.white10.withOpacity(0.1),
                     title: "Log In",
                   ),
                 ),
