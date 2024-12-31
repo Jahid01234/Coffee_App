@@ -43,7 +43,8 @@ class ProfileComponent extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                title,style: const TextStyle(
+                title,
+                style: const TextStyle(
                 color: Colors.white,
                 fontSize: 17,
                 fontWeight: FontWeight.w500,

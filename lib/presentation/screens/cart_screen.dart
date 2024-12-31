@@ -1,18 +1,12 @@
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/payment_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
 
-class CartScreen extends StatefulWidget {
+class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
-
-  @override
-  State<CartScreen> createState() => _CartScreenState();
-}
-
-class _CartScreenState extends State<CartScreen> {
-
 
   @override
   Widget build(BuildContext context) {
@@ -216,7 +210,7 @@ class _CartScreenState extends State<CartScreen> {
                 },
               ),
             ),
-           // const SizedBox(height: 10),
+
             // 3rd:- Total price and Pay button part .....
             SizedBox(
               height: 80,
@@ -261,10 +255,10 @@ class _CartScreenState extends State<CartScreen> {
                     width: 200,
                     child: CustomElevatedButton(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(
-                        //   builder: (context)=> const CartScreen(),
-                        // ),
-                        // );
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> const PaymentScreen(),
+                          ),
+                        );
                       },
                       title: "Pay",
                       bgColor: Colors.orange.shade600,
