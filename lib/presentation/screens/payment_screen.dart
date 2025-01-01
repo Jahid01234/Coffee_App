@@ -247,10 +247,6 @@ class PaymentScreen extends StatelessWidget {
                     width: 200,
                     child: CustomElevatedButton(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(
-                        //   builder: (context)=> const PaymentScreen(),
-                        //  ),
-                        // );
                       },
                       title: "Pay from Credit Card",
                       bgColor: Colors.orange.shade600,

@@ -124,12 +124,13 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
-                  width: 40,
+                SizedBox(
+                  height: 35,
+                  width: 35,
                   child: AppBarContainer(
+                    borderRadius: BorderRadius.circular(10),
                     bgColor: Colors.orange,
-                    child: Icon(
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),

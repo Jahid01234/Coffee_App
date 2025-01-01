@@ -158,12 +158,13 @@ class CartScreen extends StatelessWidget {
                                  Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    const SizedBox(
-                                      height: 40,
-                                      width: 40,
+                                    SizedBox(
+                                      height: 35,
+                                      width: 35,
                                       child: AppBarContainer(
+                                        borderRadius: BorderRadius.circular(10),
                                         bgColor: Colors.orange,
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.remove,
                                           color: Colors.white,
                                         ),
@@ -171,11 +172,12 @@ class CartScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 8),
                                     SizedBox(
-                                      height: 36,
+                                      height: 35,
                                       width: 60,
                                       child: AppBarContainer(
+                                        borderRadius: BorderRadius.circular(10),
                                         borderColor: Colors.orange.shade700,
-                                        child: const Center(
+                                        child:  const Center(
                                             child: Text(
                                               "1",
                                               style: TextStyle(
@@ -187,12 +189,13 @@ class CartScreen extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(width: 8),
-                                    const SizedBox(
-                                      height: 40,
-                                      width: 40,
+                                    SizedBox(
+                                      height: 35,
+                                      width: 35,
                                       child: AppBarContainer(
+                                        borderRadius: BorderRadius.circular(10),
                                         bgColor: Colors.orange,
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.add,
                                           color: Colors.white,
                                         ),
@@ -224,7 +227,7 @@ class CartScreen extends StatelessWidget {
                       const Text(
                         "Total Price",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
                         ),
@@ -241,7 +244,7 @@ class CartScreen extends StatelessWidget {
                             TextSpan(
                               text: "20.40",
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Colors.white70,
                                 fontWeight: FontWeight.bold,
                               ),

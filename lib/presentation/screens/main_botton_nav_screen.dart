@@ -1,5 +1,6 @@
 import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/oder_history_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     HomeScreen(),
     CartScreen(),
     Center(child: Text("Favourite screen",style: TextStyle(color: Colors.grey))),
-    Center(child: Text("Notification screen",style: TextStyle(color: Colors.grey))),
+    OrderHistoryScreen(),
   ];
 
 

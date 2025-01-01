@@ -34,7 +34,7 @@ class ContainerDesign extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               blurRadius: 1,
               spreadRadius: 0,
-              offset: const Offset(0,0)
+              offset: const Offset(0,0),
           ),
         ],
       ),
@@ -55,19 +55,21 @@ class ContainerDesign extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 13,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
               ),
 
               // 2nd row
-              Text(
-                optionalTitle ?? '',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
+              Center(
+                child: Text(
+                  optionalTitle ?? '',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ],

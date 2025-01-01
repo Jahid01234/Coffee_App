@@ -4,12 +4,14 @@ class AppBarContainer extends StatelessWidget {
   final Widget child;
   final Color? bgColor;
   final Color? borderColor;
+  final BorderRadius? borderRadius;
 
   const AppBarContainer({
     super.key,
-    required this.child,
     this.bgColor,
     this.borderColor,
+    this.borderRadius,
+    required this.child,
   });
 
   @override
@@ -20,7 +22,7 @@ class AppBarContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: bgColor ?? const Color(0xff0a0c0c),
         //color: const Color(0xFF141921),
-        borderRadius: BorderRadius.circular(17),
+        borderRadius: borderRadius ?? BorderRadius.circular(17),
         border: Border.all(
             color: borderColor ?? Colors.brown.withOpacity(0.1),
             width: 2.0,
