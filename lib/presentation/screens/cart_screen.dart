@@ -1,4 +1,4 @@
-import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/payment_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
@@ -23,7 +23,7 @@ class CartScreen extends StatelessWidget {
                 GestureDetector(
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=> const HomeScreen(),
+                        builder: (context)=> const MainBottomNavScreen(),
                       ),
                     );
                   },

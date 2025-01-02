@@ -1,4 +1,5 @@
 import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/favourite_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/home_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/oder_history_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +13,11 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   int _selectedIndex = 0;
+
   final List<Widget> screens = const [
     HomeScreen(),
     CartScreen(),
-    Center(child: Text("Favourite screen",style: TextStyle(color: Colors.grey))),
+    FavouriteScreen(),
     OrderHistoryScreen(),
   ];
 
@@ -43,7 +45,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           ),
 
           BottomNavigationBarItem(
-            label: "Bag",
+            label: "Cart",
             icon: Icon(Icons.shopping_bag),
           ),
 

@@ -1,3 +1,4 @@
+import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/oder_item_card.dart';
@@ -20,7 +21,10 @@ class OrderHistoryScreen extends StatelessWidget {
                 // Back to page button .....
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> const MainBottomNavScreen(),
+                     ),
+                    );
                   },
                   child: const AppBarContainer(
                     child: Icon(

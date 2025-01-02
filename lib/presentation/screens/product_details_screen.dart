@@ -1,5 +1,6 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
+import 'package:coffee_app_ui/presentation/screens/favourite_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
 import 'package:coffee_app_ui/presentation/widgets/size_picker.dart';
@@ -57,11 +58,19 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                     ),
-                    const AppBarContainer(
-                      child: Icon(
-                        Icons.favorite,
-                        color: Colors.grey,
-                        size: 20,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> const FavouriteScreen(),
+                          ),
+                        );
+                      },
+                      child: const AppBarContainer(
+                        child: Icon(
+                          Icons.favorite,
+                          color: Colors.grey,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ],
@@ -170,6 +179,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   text: widget.coffeeModel.rating.toString(),
                                   style: const TextStyle(
                                     fontSize: 18,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   children: const [

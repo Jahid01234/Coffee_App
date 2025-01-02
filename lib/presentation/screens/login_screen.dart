@@ -40,7 +40,10 @@ class _LogInScreenState extends State<LogInScreen> {
                 FadeInDown(
                   duration: const Duration(milliseconds: 500),
                   child: Center(
-                    child: Lottie.asset("assets/animations/login_animation.json",height: 200),
+                    child: Lottie.asset(
+                        "assets/animations/login_animation.json",
+                        height: 200,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),
