@@ -2,8 +2,8 @@ import 'package:coffee_app_ui/presentation/screens/main_botton_nav_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/payment_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
+import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:flutter/material.dart';
-
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -113,11 +113,11 @@ class CartScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 15),
                                 // 2nd:- Size and Price part...
-                                Row(
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    const SizedBox(
+                                    SizedBox(
                                       width:80,
                                       child: AppBarContainer(
                                           child: Center(
@@ -131,25 +131,9 @@ class CartScreen extends StatelessWidget {
                                           ),
                                       ),
                                     ),
-                                    const SizedBox(width: 20),
-                                    RichText(
-                                      text: const TextSpan(
-                                        text: "\$ ",
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: Colors.orange,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        children: [
-                                          TextSpan(
-                                            text: "6.78",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                    SizedBox(width: 20),
+                                    RichTextWidget(
+                                      text: "6.78",
                                     ),
                                   ],
                                 ),
@@ -220,11 +204,11 @@ class CartScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Total Price",
                         style: TextStyle(
                           fontSize: 16,
@@ -232,25 +216,10 @@ class CartScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      RichText(
-                        text: const TextSpan(
-                          text:"\$ ",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          children:  [
-                            TextSpan(
-                              text: "20.40",
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
+                      RichTextWidget(
+                        text: "21.42",
+                        size: 15,
+                        textFontWeight: FontWeight.normal,
                       ),
                     ],
                   ),

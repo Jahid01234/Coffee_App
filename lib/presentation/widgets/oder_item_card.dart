@@ -7,7 +7,6 @@ class OderItemCard extends StatelessWidget {
   final String title;
   final String subTitle;
 
-
   const OderItemCard({
     super.key,
     required this.image,
@@ -21,12 +20,13 @@ class OderItemCard extends StatelessWidget {
       height: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomCenter,
           colors: [
-            const Color(0xff262B34),
-            Colors.grey.withOpacity(0.1),
+            Color(0xff262B34),
+            Colors.black45,
+
           ],
         ),
       ),

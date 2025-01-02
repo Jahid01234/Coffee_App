@@ -3,6 +3,7 @@ import 'package:coffee_app_ui/presentation/screens/cart_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/favourite_screen.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
+import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:coffee_app_ui/presentation/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -174,25 +175,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 Icons.star,
                                 color: Colors.orange,
                               ),
-                              RichText(
-                                text: TextSpan(
-                                  text: widget.coffeeModel.rating.toString(),
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  children: const [
-                                    TextSpan(
-                                      text: " (5,789)",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              RichTextWidget(
+                                  signColor: Colors.white,
+                                  signText:widget.coffeeModel.rating.toString(),
+                                  signFontWeight: FontWeight.normal,
+
+                                  color: Colors.grey,
+                                  text: " (5,789)",
+                                  textFontWeight: FontWeight.normal,
                               ),
                             ],
                           ),
@@ -280,25 +270,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              RichText(
-                                text: TextSpan(
-                                  text:"\$ ",
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.orange,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                  children:  [
-                                    TextSpan(
-                                      text: widget.coffeeModel.price.toString(),
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white70,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              RichTextWidget(
+                                  text: widget.coffeeModel.price.toString(),
+                                  textFontWeight: FontWeight.normal,
                               ),
                             ],
                           ),

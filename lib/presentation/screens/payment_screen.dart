@@ -1,6 +1,7 @@
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/container_design.dart';
 import 'package:coffee_app_ui/presentation/widgets/custom_elevated_button.dart';
+import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -209,11 +210,11 @@ class PaymentScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Price",
                         style: TextStyle(
                           fontSize: 18,
@@ -221,25 +222,10 @@ class PaymentScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      RichText(
-                        text: const TextSpan(
-                          text: "\$ ",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: "20.40",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
+                      RichTextWidget(
+                        text: "21.42",
+                        size: 15,
+                        textFontWeight: FontWeight.normal,
                       ),
                     ],
                   ),

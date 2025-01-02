@@ -1,7 +1,7 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
+import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:flutter/material.dart';
-
 
 class ProductCard extends StatelessWidget {
   final CoffeeModel coffeeModel;
@@ -105,24 +105,8 @@ class ProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                RichText(
-                  text: TextSpan(
-                    text: "\$ ",
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: coffeeModel.price.toString(),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                RichTextWidget(
+                  text: coffeeModel.price.toString(),
                 ),
                 SizedBox(
                   height: 35,

@@ -1,10 +1,10 @@
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
+import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteItemListCard extends StatelessWidget {
-  const FavouriteItemListCard({
-    super.key,
-  });
+
+  const FavouriteItemListCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +60,12 @@ class FavouriteItemListCard extends StatelessWidget {
                 color: const Color(0xFF342520).withOpacity(0.2),
                 borderRadius: BorderRadius.circular(35),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
+              child: const Padding(
+                padding: EdgeInsets.all(20),
                 child: Column(
                   children: [
                     // 1st: title/subtitle and coffee/ water drop icon..
-                    const Row(
+                    Row(
                       mainAxisAlignment:
                       MainAxisAlignment.spaceBetween,
                       children: [
@@ -138,7 +138,7 @@ class FavouriteItemListCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     // 2nd: rating count and medium roasted..
                     Row(
                       mainAxisAlignment:
@@ -146,32 +146,22 @@ class FavouriteItemListCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.star,
                               color: Colors.orange,
                             ),
-                            RichText(
-                              text: const TextSpan(
-                                text: "4.5",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: " (5,789)",
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                            RichTextWidget(
+                              signColor: Colors.white,
+                              signText:"4.5" ,
+                              signFontWeight: FontWeight.normal,
+
+                              color: Colors.grey,
+                              text: " (5,789)",
+                              textFontWeight: FontWeight.normal,
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 40,
                           width: 130,
                           child: AppBarContainer(
