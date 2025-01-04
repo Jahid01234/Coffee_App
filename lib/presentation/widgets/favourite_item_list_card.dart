@@ -3,7 +3,6 @@ import 'package:coffee_app_ui/presentation/widgets/rich_text_widget.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteItemListCard extends StatelessWidget {
-
   const FavouriteItemListCard({super.key});
 
   @override
@@ -41,7 +40,7 @@ class FavouriteItemListCard extends StatelessWidget {
                 child: AppBarContainer(
                   child: Icon(
                     Icons.favorite,
-                    color: Colors.grey,
+                    color: Colors.redAccent,
                     size: 20,
                   ),
                 ),
@@ -106,7 +105,8 @@ class FavouriteItemListCard extends StatelessWidget {
                                     Text(
                                       "Coffee",
                                       style: TextStyle(
-                                          color: Colors.grey),
+                                          color: Colors.grey,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -128,7 +128,8 @@ class FavouriteItemListCard extends StatelessWidget {
                                     Text(
                                       "Milk",
                                       style: TextStyle(
-                                          color: Colors.grey),
+                                          color: Colors.grey,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -203,8 +204,10 @@ class FavouriteItemListCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "A cappuccino is a coffee-based drink made primarily from espresso and milk. It is the best coffee. ",
+                      "A cappuccino is a coffee-based drink made primarily from "
+                          "espresso and milk. It is the best coffee. ",
                       maxLines: 2,
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white70,

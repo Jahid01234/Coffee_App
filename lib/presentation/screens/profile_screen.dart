@@ -90,11 +90,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const ProfileComponent(
-                    title: 'My Profile',
-                    icon: Icons.person,
-                  ),
-
                   ProfileComponent(
                     title: 'Home',
                     icon: Icons.home,
@@ -104,6 +99,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                        ),
                       );
                     },
+                  ),
+                  const ProfileComponent(
+                    title: 'About',
+                    icon: Icons.account_box,
                   ),
 
                   const ProfileComponent(

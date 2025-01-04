@@ -1,7 +1,6 @@
 import 'package:coffee_app_ui/data/model/coffee_model.dart';
 import 'package:coffee_app_ui/presentation/screens/product_details_screen.dart';
 import 'package:coffee_app_ui/presentation/screens/profile_screen.dart';
-import 'package:coffee_app_ui/presentation/widgets/app_drawer.dart';
 import 'package:coffee_app_ui/presentation/widgets/appbar_container.dart';
 import 'package:coffee_app_ui/presentation/widgets/coffee_category_types.dart';
 import 'package:coffee_app_ui/presentation/widgets/product_card.dart';
@@ -59,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                   fontSize: 28,
                   color: Colors.white,
-                  fontWeight: FontWeight.w700),
+                  fontWeight: FontWeight.w700,
+              ),
             ),
             const SizedBox(height: 30),
 
@@ -153,7 +153,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      drawer: const AppDrawer(),
     );
   }
 
